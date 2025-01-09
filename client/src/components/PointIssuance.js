@@ -10,7 +10,7 @@ const PointIssuance = () => {
       const response = await axios.post('/api/loyalty/issue-points', transaction);
       setIssuedPoints(response.data.points);
     } catch (error) {
-      console.error('point issuance failed', error);
+      console.error('point issuance failed !!', error);
     }
   };
 

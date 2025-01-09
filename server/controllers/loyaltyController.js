@@ -20,19 +20,15 @@ exports.issuePoints = async (req, res) => {
     res.json({ points: pointsIssued });
   } catch (error) {
     console.error('Error issuing points', error);
-    res.status(500).json({ error: 'Point issuance failed !' });
+    res.status(500).json({ error: 'Point issuance failed !!' });
   }
 };
-
-// calculate points
 const calculatePoints = (amount) => {
   const pointsPerDollar = 1; //
   return amount * pointsPerDollar;
 };
-
-// Interact with blockchain for point issuance
+e
 const issuePointsOnBlockchain = async (customerId, points) => {
-  // smart contract for loyalty token on Ethereum
   const response = await axios.post('http://localhost:8545/issue-points', {
     customerId,
     points,
